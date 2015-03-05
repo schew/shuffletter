@@ -1,0 +1,79 @@
+package edu.jhu.cs.schew4.oose;
+
+import java.util.ArrayList;
+
+// Collection of ShuffletterTiles left
+public class Bag {
+	private int numTiles;
+	
+	public Bag() {
+		ArrayList<MyShuffletterTile> tiles = new ArrayList<>();
+		//Adding new tiles into the bag with no position
+		for (int i = 0; i < 2; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'J'));
+			tiles.add(new MyShuffletterTile(null, 'K'));
+			tiles.add(new MyShuffletterTile(null, 'Q'));
+			tiles.add(new MyShuffletterTile(null, 'X'));
+			tiles.add(new MyShuffletterTile(null, 'Z'));
+		}
+	
+		for (int i = 0; i < 3; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'B'));
+			tiles.add(new MyShuffletterTile(null, 'C'));
+			tiles.add(new MyShuffletterTile(null, 'F'));
+			tiles.add(new MyShuffletterTile(null, 'H'));
+			tiles.add(new MyShuffletterTile(null, 'M'));
+			tiles.add(new MyShuffletterTile(null, 'P'));
+			tiles.add(new MyShuffletterTile(null, 'V'));
+			tiles.add(new MyShuffletterTile(null, 'W'));
+			tiles.add(new MyShuffletterTile(null, 'Y'));
+		}
+		
+		for (int i = 0; i < 4; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'G'));
+			
+		}
+		
+		for (int i = 0; i < 5; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'L'));
+		}
+		
+		for (int i = 0; i < 6; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'D'));
+			tiles.add(new MyShuffletterTile(null, 'S'));
+			tiles.add(new MyShuffletterTile(null, 'U'));
+		}
+		
+		for (int i = 0; i < 8; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'N'));
+		}
+		
+		for (int i = 0; i < 11; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'O'));
+		}
+		
+		for (int i = 0; i < 9; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'T'));
+			tiles.add(new MyShuffletterTile(null, 'R'));
+		}
+		
+		for (int i = 0; i < 12; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'I'));
+		}
+		
+		for (int i = 0; i < 13; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'A'));
+		}
+		
+		for (int i = 0; i < 18; i ++) {
+			tiles.add(new MyShuffletterTile(null, 'E'));
+		}
+		
+		tiles.add(new MyShuffletterTile(null, ' '));
+		numTiles = tiles.size();
+	}
+	
+	public int getNumTiles() {
+		return numTiles;
+	}
+}

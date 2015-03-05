@@ -1,0 +1,18 @@
+package edu.jhu.cs.schew4.oose;
+
+public class ShuffletterTile {
+
+	public void  addListener(ShuffletterModelListener listener) {
+		
+	}
+	
+	public void endRound() {
+		
+	}
+	
+	public String getAuthorName() {
+		
+	}
+	
+	
+}

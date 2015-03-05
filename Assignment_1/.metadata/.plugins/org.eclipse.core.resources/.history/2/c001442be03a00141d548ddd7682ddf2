@@ -1,0 +1,85 @@
+package edu.jhu.cs.schew4.oose;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.Position;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterModelListener;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterTile;
+
+public class ShuffletterModel {
+	
+	private Bag shuffleBag;
+	
+	public ShuffletterModel() {
+		//TODO
+		shuffleBag = new Bag();
+	}
+	
+	public void addListener(ShuffletterModelListener listener) {
+		//TODO
+	}
+	
+	public void endRound() {
+		//TODO
+	}
+	
+	public String getAuthorName() {
+		return "Stephanie Chew";
+	}
+	
+	public int getBagCount() {
+		return shuffleBag.getNumTiles();
+	}
+	
+	public Set<String> getLegalWords() {
+		//TODO
+		try {
+			FileInputStream	fiL = new FileInputStream("wordlist.txt");
+
+			//Set<String> words = new Set<String>();
+			//while (file.stillhasword) {
+			//	words.add;
+			//}
+		} catch (FileNotFoundException e) {
+			System.err.println("Exception: " + e);
+		}
+		
+		return null;
+	}
+	
+	public List<ShuffletterTile> getSupplyContents() {
+		//TODO
+		return null;
+	}
+	
+	public ShuffletterTile getTile(Position P) {
+		//TODO
+		return null;
+	}
+	
+	public Collection<Position> getTilePositions() {
+		//TODO
+		return null;
+	}
+	
+	public boolean isGameOver() {
+		//TODO
+		return false;
+	}
+	
+	public void move(Position source, Position target) {
+		//TODO
+	}
+	
+	public void play(ShuffletterTile tile, Position target) {
+		//TODO
+	}
+	
+	public void removeListener(ShuffletterModelListener listener){
+		//TODO
+	}
+}

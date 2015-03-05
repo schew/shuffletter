@@ -1,0 +1,52 @@
+package edu.jhu.cs.schew4.oose;
+
+public class ShuffletterModel {
+	public static void main(String[] args){
+	}
+		public void addListener(ShuffletterModelListener listener) {
+		}
+		
+		public void endRound() {
+		}
+		
+		public String getAuthorName() {
+			return null;
+		}
+		
+		public int getBagCount() {
+			return 0;
+		}
+		
+		public Set<String> getLegalWords() {
+			return null;
+		}
+		
+		public List<ShuffletterTile> getSupplyContents() {
+			return null;
+		}
+		
+		public ShuffletterTile getTile(Position P) {
+			return null;
+		}
+		
+		public Collection<Position> getTilePositions() {
+			return null;
+		}
+		
+		public boolean isGameOver() {
+			return false;
+		}
+		
+		public void move(Position source, Position target) {
+			
+		}
+		
+		public void play(ShuffletterTile tile, Position target) {
+			
+		}
+		
+		public void removeListener(ShuffletterModelListener listener){
+			
+		}
+
+}

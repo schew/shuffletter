@@ -1,0 +1,13 @@
+package edu.jhu.cs.schew4.oose;
+// Collection of ShuffletterTiles left
+public class Bag {
+	private int numTiles;
+	
+	public Bag {
+		
+	}
+	
+	public int numTiles() {
+		return numTiles;
+	}
+}

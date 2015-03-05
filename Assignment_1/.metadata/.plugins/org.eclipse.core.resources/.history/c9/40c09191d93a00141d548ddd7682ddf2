@@ -1,0 +1,71 @@
+package edu.jhu.cs.schew4.oose;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.Position;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterModelListener;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterTile;
+
+public class ShuffletterModel {
+	
+	private int bag;
+	
+	public ShuffletterModel() {
+		bag = 20;
+	}
+	
+	public void addListener(ShuffletterModelListener listener) {
+	}
+	
+	public void endRound() {
+	}
+	
+	public String getAuthorName() {
+		return null;
+	}
+	
+	public int getBagCount() {
+		return bag;
+	}
+	
+	public Set<String> getLegalWords() {
+		try {
+			FileInputStream	file = new FileInputStream("wordlist.txt");
+		} catch (FileNotFoundException e) {
+			System.err.println("Exception: " + e);
+		}
+		return null;
+	}
+	
+	public List<ShuffletterTile> getSupplyContents() {
+		return null;
+	}
+	
+	public ShuffletterTile getTile(Position P) {
+		return null;
+	}
+	
+	public Collection<Position> getTilePositions() {
+		return null;
+	}
+	
+	public boolean isGameOver() {
+		return false;
+	}
+	
+	public void move(Position source, Position target) {
+		
+	}
+	
+	public void play(ShuffletterTile tile, Position target) {
+		
+	}
+	
+	public void removeListener(ShuffletterModelListener listener){
+		
+	}
+}

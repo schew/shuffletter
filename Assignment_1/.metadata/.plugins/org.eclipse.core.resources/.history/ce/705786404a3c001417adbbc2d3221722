@@ -1,0 +1,163 @@
+package edu.jhu.cs.schew4.oose;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.Position;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterIllegalMoveEvent;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterModelListener;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterTile;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterTileMovedEvent;
+
+public class MyShuffletterModel{
+	
+	private Bag shuffleBag;
+	private ArrayList<ShuffletterModelListener> listeners;
+	private HashMap<Position, MyShuffletterTile> supply;
+	private Set<String> wordList;
+	private HashMap<Position, MyShuffletterTile> board;
+	
+	public MyShuffletterModel() {
+		//TODO
+		//Models should have bags of tiles, a supply of tiles, a list of legal words, and listeners
+		shuffleBag = new Bag();
+		supply = new HashMap<Position, MyShuffletterTile>();
+		listeners = new ArrayList<ShuffletterModelListener>();
+		board = new HashMap<Position, MyShuffletterTile>();
+	
+		wordList = new HashSet<String>();
+		String word;
+		try {
+			BufferedReader read = new BufferedReader(new FileReader(new File ("wordlist.txt")));
+			try {
+				while ((word = read.readLine()) != null) {
+					wordList.add(word);
+				}
+				read.close();
+			} catch (IOException e) {
+				System.err.println("Bad input: " + e);
+			}
+		} catch (FileNotFoundException e) {
+			System.err.println("File not found: " + e);
+		}
+	}
+
+	public void addListener(ShuffletterModelListener listener) {
+		listeners.add(listener);
+	}
+
+	public void endRound() {
+		//TODO
+		//supply is 0
+		//end of round - check positions are legal, check if word is legal, check end of game
+		//put in another tile into the supply
+	}
+	
+	public String getAuthorName() {
+		return "Stephanie Chew";
+	}
+	
+	public int getBagCount() {
+		return shuffleBag.getNumTiles();
+	}
+	
+	public Set<String> getLegalWords() {
+		// Get list of words from file generated in constructor
+		return wordList;
+	}
+	
+	public List<MyShuffletterTile> getSupplyContents() {
+		//TODO
+		//arraylist of supply
+		return null;
+	}
+	
+	public MyShuffletterTile getTile(Position p) {
+		//Finds the tile with given position on the board
+		return board.get(p);
+	}
+	
+	public Collection<Position> getTilePositions() {
+		//Gets set of key positions on board
+		return board.keySet();
+	}
+	
+	public boolean isGameOver() {
+		//End the game when no tiles are left in the bag
+		if (shuffleBag.getNumTiles() == 0 && supply.size() == 0) {
+			//TODO
+			this.endRound();
+			return true;
+		}
+		return false;
+	}
+	
+	public void move(Position source, Position target) {
+		//move existing tile
+		MyShuffletterTile s = board.get(source);
+		//If tile exists at target position, switch places
+		MyShuffletterTile t = this.getTile(target);
+		if (t != null) {
+			//Swap tile positions
+			s.setPosition(target);
+			t.setPosition(source);
+			
+			board.remove(source);
+			board.remove(target);
+			
+			board.put(target, s);
+			board.put(source, t);
+		} else {
+			//Put source tile into target position
+			s.setPosition(target);
+			board.remove(source); 
+			board.put(target, s);
+		}
+		//Notify each of the listeners that a move was made
+		ShuffletterTileMovedEvent moveEvent = new ShuffletterTileMovedEvent(source, target, s);
+		for (ShuffletterModelListener l : this.listeners ) {
+			l.tileMoved(moveEvent);
+		}
+	}
+
+	public void play(MyShuffletterTile tile, Position target) {
+		//TODO
+		//Check validity of move
+		for(MyShuffletterTile t : board ) {
+			if (t.getPosition() == target) {
+				//Create illegal event
+				ShuffletterIllegalMoveEvent misplacedTileEvent = new ShuffletterIllegalMoveEvent("Sorry! You can't put this tile here. Try another spot.");
+				//Notify listener of illegal event
+				for (ShuffletterModelListener l : this.listeners) {
+					l.illegalMoveMade(misplacedTileEvent);
+				}
+				return;
+			}
+		}
+		//Add tile to board
+		//TODO
+		supply.remove(tile);
+		tile.setPosition(target);
+		board.add(tile);
+		//Remove tile from supply
+		
+		//Notify listeners
+		//Check validity of 
+		//check if tile is in supply
+		//move
+		
+	}
+	
+	public void removeListener(ShuffletterModelListener listener){
+		listeners.remove(listener);
+	}
+}

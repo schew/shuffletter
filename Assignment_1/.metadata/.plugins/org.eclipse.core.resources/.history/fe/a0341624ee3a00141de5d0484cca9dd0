@@ -1,0 +1,90 @@
+public class Rectangle  
+{
+
+         private int length;
+         private int width;
+
+        public Rectangle ( ) // default constructor
+        {
+                length = 1;
+                width = 1;
+        }
+
+        public Rectangle (int len, int wid) // initializing constructor
+        {
+                length = len;
+                width = wid;
+        }
+        public double computeArea() // Computing constructor
+        {
+                double area;
+                area = length * width;
+                return area;
+        }
+        public void setLength(int l)
+        {
+        	length = l;
+        }
+        public void setWidth(int i)
+        {
+        	width = w;
+        }
+        }
+        public int getLength() 
+        {
+        	return length;
+        }
+        public int getWidth()
+        {
+        	return width;
+        }
+        public double computePerimeter() // Computing constructor
+        {
+                double perimeter;
+                perimeter = 2*length + 2*width;
+                return perimeter;
+        }  
+        public String toString(double d)
+        {
+        	return "" + d;
+        }
+   
+}
+
+public class RectangleRunner{
+
+	public static void main (String [] args)
+	{
+		Scanner keyboard = new Scanner (System.in);
+		Rectangle r = new Rectangle();
+		int len, wid;
+		double rArea, rPerimeter;
+ 
+		System.out.println (r);
+		rArea = r.computeArea();
+		rPerimeter= r.computePerimeter();
+		System.out.println ("The default rectangle area: " + r.toString(rArea));
+		System.out.println ("The default rectangle perimeter: " + r.toString(rPerimeter));
+
+		System.out.println ("Enter length of a rectangle: ");
+		len = keyboard.nextInt();
+		System.out.println ("Enter width of a rectangle: " );
+		wid = keyboard.nextInt();
+		Rectangle r2 = new Rectangle (len, wid);
+		System.out.println (r2);
+		rArea = r2.computeArea();
+		rPerimeter= r2.computePerimeter();
+		System.out.println ("Your rectangle area: " + r2.toString(rArea));
+		System.out.println ("Your rectangle perimeter: " + r2.toString(rPerimeter));
+
+		r.setLength(5);
+		r.setWidth(5);
+ 
+		System.out.println (r);
+		rArea = r.computeArea();
+		rPerimeter= r.computePerimeter();
+		System.out.println ("The 5 x 5 rectangle area: " + r.toString(rArea));
+		System.out.println ("The 5 x5 rectangle perimeter: " + r.toString(rPerimeter));
+ 
+	} 
+}

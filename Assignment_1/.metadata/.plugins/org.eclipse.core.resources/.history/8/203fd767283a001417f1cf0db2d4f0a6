@@ -1,0 +1,14 @@
+package edu.jhu.cs.schew4.oose;
+
+public class ShuffletterTile {
+	public char getLetter() {
+		return 0;
+	}
+	
+	public boolean isWild() {
+		if this.getLetter() == ' ' {
+			return true;
+		}
+		return false;
+	}
+}

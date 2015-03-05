@@ -1,0 +1,33 @@
+/******************
+Stephanie Chew
+Fall 2014 - OOSE
+schew4@jhu.edu
+*******************/
+
+This repository contains an implementation of the MyShuffletterModel.
+Users are able to play the game Shuffletter as outlined at https://pl.cs.jhu.edu/oose/assignments/assignment1.shtml
+The ShuffletterInterface-javadocs and ShuffletterFramework.zip were provided.
+
+Included are the following files
+- MyShuffletterModel.java
+- MyShuffletterTile.java
+- wordlist.txt
+- README
+
+My implementation of ShuffletterModel contains a bag (list of tiles not yet played),
+supply (list of tiles available to be played), board, (map of tiles on the board with keys of Positions
+to the value tiles), and listeners (to notify the controller of any illegal gameplay, correct gameplay, and any 
+changes made in the game). A dictionary of words was also provided. 
+
+At the beginning of the game, the bag is populated with tiles with distributions outlined on the website above.
+The tiles in the bag are then shuffled and 21 of them are passed into the supply for the user to play.
+Listeners are notified when the end of the round occurs when all tiles in the supply have been played, all
+tiles on the board are orthogonal to each other, and all possible words on the board are legal. Listeners are 
+notified that the game is over when both the bag and the supply are empty. Words are check to be legal by 
+finding the start of each word given the positions on the board and then following them down vertically or
+right horizontally and compared to the words in the dictionary.
+
+When tiles are played, tiles are removed from supply and added to the board. Tiles cannot be played on existing
+tiles on the board. When tiles are moved, tiles are removed from board and a new association between the
+new key position to the value tile is made. When tiles are moved on top of each other, they simply swap positions.
+At the end of the game, all listeners are also removed.

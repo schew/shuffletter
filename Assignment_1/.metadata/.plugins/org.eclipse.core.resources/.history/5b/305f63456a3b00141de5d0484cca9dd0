@@ -1,0 +1,111 @@
+package edu.jhu.cs.schew4.oose;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.Position;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterModelListener;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterTile;
+
+public class MyShuffletterModel{
+	
+	private Bag shuffleBag;
+	private ArrayList<ShuffletterModelListener> listeners;
+	private ArrayList<MyShuffletterTile> supply;
+	private Set<String> wordList;
+	
+	public MyShuffletterModel() {
+		//TODO
+		//Models should have bags of tiles, a supply of tiles, a list of legal words, and listeners
+		shuffleBag = new Bag();
+		supply = new ArrayList<MyShuffletterTile>();
+		listeners = new ArrayList<ShuffletterModelListener>();
+		
+		wordList = new HashSet<String>();
+		BufferedReader read = new BufferedReader(new FileReader(new File ("wordlist.txt")));
+	}
+
+	public void addListener(ShuffletterModelListener listener) {
+		listeners.add(listener);
+	}
+
+	public void endRound() {
+		//TODO
+		//end of round - check positions are legal, check if word is legal, check end of game
+		//put in another tile into the supply
+	}
+	
+	public String getAuthorName() {
+		return "Stephanie Chew";
+	}
+	
+	public int getBagCount() {
+		return shuffleBag.getNumTiles();
+	}
+	
+	public Set<String> getLegalWords() {
+	/*	try {
+		//	BufferedReader read = new BufferedReader();
+
+			//Set<String> words = new Set<String>();
+			//while (file.stillhasword) {
+			//	words.add;
+			//}
+		} catch (FileNotFoundException e) {
+			System.err.println("Exception: " + e);
+		}*/
+		
+		//TODO
+		//list of words from file - constructor
+		return null;
+	}
+	
+	public List<MyShuffletterTile> getSupplyContents() {
+		//TODO
+		//arraylist of supply
+		return null;
+	}
+	
+	public MyShuffletterTile getTile(Position P) {
+		//TODO
+		//get position of tile
+		return null;
+	}
+	
+	public Collection<Position> getTilePositions() {
+		//TODO
+		//collection of position of tiles on board
+		return null;
+	}
+	
+	public boolean isGameOver() {
+		//TODO
+		//no tiles left in bag
+		
+		return false;
+	}
+	
+	public void move(Position source, Position target) {
+		//TODO
+		//move existing tile
+		//target position is legal
+		//swap tiles if positions overlap
+
+		//change positions
+	}
+	
+	public void play(MyShuffletterTile tile, Position target) {
+		//TODO
+		//from supply to board
+	}
+	
+	public void removeListener(ShuffletterModelListener listener){
+		//TODO
+		listeners.remove(listener);
+	}
+}

@@ -1,0 +1,8 @@
+package edu.jhu.cs.schew4.oose;
+
+public class ShuffletterTile {
+	public char getLetter() {
+		return null;
+	}
+	
+}

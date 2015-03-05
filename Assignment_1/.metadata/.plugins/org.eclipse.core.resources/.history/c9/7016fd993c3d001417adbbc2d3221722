@@ -1,0 +1,24 @@
+package edu.jhu.cs.schew4.oose;
+
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.Position;
+import edu.jhu.cs.oose.fall2014.shuffletter.iface.ShuffletterTile;
+
+public class MyShuffletterTile implements ShuffletterTile {
+
+	private char letter;
+
+	public MyShuffletterTile(char l) {
+		letter = l;
+	}
+
+	public char getLetter() {
+		return letter;
+	}
+
+	public boolean isWild() {
+		if (this.getLetter() == ' ') {
+			return true;
+		}
+		return false;
+	}
+}

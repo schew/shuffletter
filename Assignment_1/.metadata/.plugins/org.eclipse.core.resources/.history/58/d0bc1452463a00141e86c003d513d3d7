@@ -1,0 +1,7 @@
+package edu.jhu.cs.schew4.oose;
+
+public class ShuffletterModel {
+	public static void main(String[] args){
+		
+	}
+}

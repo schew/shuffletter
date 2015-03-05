@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+
+package edu.jhu.cs.schew4.oose;
+
+
+// Collection of ShuffletterTiles left
+public class Bag {
+	private int numTiles;
+	
+	public Bag() {
+		ArrayList<MyShuffletterTile> tiles = new ArrayList<MyShuffletterTile>;
+		numTiles = 12;
+	}
+	
+	public int getNumTiles() {
+		return numTiles;
+	}
+}

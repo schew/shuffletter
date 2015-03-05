@@ -1,0 +1,26 @@
+package edu.jhu.cs.schew4.oose;
+
+public class ShuffletterModel {
+	
+	public ShuffletterModel() {
+		
+	}
+	
+	public void  addListener(ShuffletterModelListener listener) {
+		
+	}
+	
+	public void endRound() {
+		
+	}
+	
+	public String getAuthorName() {
+		return null;
+	}
+	
+	public int getBagCount() {
+		return 0;
+	}
+	
+	
+}
